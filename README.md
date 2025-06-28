@@ -4,5 +4,3 @@ A lista não esta completa, os exercicios que eu fiz foram o: 1, 2, 3 e 5
 2-verificador palindromo
 3-piramide
 5-carrinho de compra
-
-as outras 2 são apenas tentantivas,
