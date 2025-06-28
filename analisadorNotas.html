@@ -1,0 +1,29 @@
+<script>
+    /*
+    PROBLEMA: ANALISADOR DE NOTAS DA TURMA
+
+    Desenvolva um programa que primeiro pergunta ao usuário quantas notas ele deseja inserir.
+    Depois, o programa deve pedir cada uma das notas e, ao final, calcular e exibir:
+    - A média da turma.
+    - A maior nota.
+    - A menor nota.
+    */
+
+    //ENTRADA
+    const alunos = Number(prompt("Insira o numero de alunos"));
+    let turma = [];
+    let notas;
+    console.log(turma)
+    for (let i=0; i<alunos; i++) {
+        notas = prompt("Insira as notas com espaço, EXEMPLO: 9 8 3")
+        notas = Number(notas.split(' '))
+        turma.push(notas)
+        console.log(notas)
+    }
+    document.writeln(turma);
+    //PROCESSAMENTO
+
+
+    //SAÍDA
+    
+</script>

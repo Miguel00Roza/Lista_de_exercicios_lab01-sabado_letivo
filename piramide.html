@@ -1,0 +1,59 @@
+<script>
+    /*
+    PROBLEMA: PIRÂMIDE DE NÚMEROS
+    Crie um programa que solicita ao usuário um número de 1 a 9.
+    O programa deve desenhar uma "pirâmide" de números no console,
+    onde cada linha exibe o número da linha repetido N vezes.
+
+    **Exemplo de saída para o número 4:**
+    1
+    22
+    333
+    4444
+    333
+    22
+    1
+    */
+
+    //ENTRADA
+    const numero = Number(prompt("Insira um numero de 1 a 9"));
+
+    //PROCESSAMENTO
+    const numeros = [];
+    let i = 0;
+    while (i <= numero) {
+        for (a=0; a<i; a++) {
+            numeros.push(i)
+        }
+        i++
+    }
+    let n = numeros.length - 1;
+
+    while (n >= 0) {
+        if (n === numeros.length - 1) {  
+            n -= numero;
+        }
+        numeros.push(numeros[n]);
+        n--;
+    }
+    
+    let cont = 0;
+    while (cont < numeros.length) {
+        console.log(numeros[cont]);
+        cont ++
+    }
+    na = 0
+    texto = ""
+    while (na<=numero) {
+        if (numeros[na] === numeros[na + 1]) {
+            texto += String(numeros[na]);
+        } else {
+            document.write(texto);
+            texto = "";
+            texto += String(numeros[na]);
+        }
+        na++
+    }
+    //SAÍDA
+
+</script>

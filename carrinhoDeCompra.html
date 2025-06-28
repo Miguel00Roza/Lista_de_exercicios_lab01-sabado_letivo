@@ -1,0 +1,51 @@
+<script>
+    /*
+    PROBLEMA: SIMULADOR DE CAIXA DE LOJA
+
+    Crie um sistema que simula o cálculo do total de um carrinho de compras.
+    O carrinho de compras será representado por um array de objetos. Cada objeto
+    terá as propriedades: `nome` (string), `precoUnitario` (número) e `quantidade` (número).
+
+    O programa deve:
+    1. Calcular o subtotal da compra (soma de `precoUnitario * quantidade` de todos os itens).
+    2. Aplicar um desconto de 10% se o subtotal for maior que R$ 200,00.
+    3. Calcular o valor final a pagar.
+    4. Exibir um resumo no console com o subtotal, o valor do desconto (se houver) e o total a pagar.
+
+    O carrinho já vem preenchido para focar na lógica de cálculo.
+    */
+   
+    //ENTRADA
+    const carrinho = [
+        { nome: "Teclado Mecânico", precoUnitario: 250.00, quantidade: 1 },
+        { nome: "Mouse Gamer", precoUnitario: 120.50, quantidade: 1 },
+        { nome: "Headset Pro", precoUnitario: 350.00, quantidade: 1 },
+        { nome: "Mousepad GG", precoUnitario: 80.00, quantidade: 2 }
+    ];
+
+    //PROCESSAMENTO
+    function calcular(produto) {
+        let valor = produto[1] * produto[2]
+        let desconto = 0;
+        if ( valor > 200) {
+            desconto = valor - (valor * 0.10)
+            valor = valor - desconto
+            produto.push(desconto);
+        }
+        return valor
+    }
+
+    let p1 = [carrinho[0].nome, carrinho[0].precoUnitario, carrinho[0].quantidade]
+    p1.push(calcular(p1))
+    let p2 = [carrinho[1].nome, carrinho[1].precoUnitario, carrinho[1].quantidade]
+    p2.push(calcular(p2))
+    let p3 = [carrinho[2].nome, carrinho[2].precoUnitario, carrinho[2].quantidade]
+    p3.push(calcular(p3))
+    let p4 = [carrinho[3].nome, carrinho[3].precoUnitario, carrinho[3].quantidade]
+    p4.push(calcular(p4))
+
+    const valorTotal = p1[3] + p2[3] + p3[3] + p4[3];
+        document.write(`O subtotal dos produtos foi: ${p1[0]} R$${p1[3]} desconto de R$${p1[4]}, ${p2[0]} R$${p2[3]}, ${p3[0]} R$${p3[3]} desconto de R$${p3[4]}, ${p4[0]} R$${p4[3]}` + "<br>")
+        document.write(`O valor total da compra foi de ${valorTotal}` + "<br>");
+    //SAÍDA
+</script>
