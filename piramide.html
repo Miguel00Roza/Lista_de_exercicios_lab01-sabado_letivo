@@ -16,6 +16,7 @@
     */
 
     //ENTRADA
+    function versaoAntiga() {
     const numero = Number(prompt("Insira um numero de 1 a 9"));
 
     //PROCESSAMENTO
@@ -55,5 +56,42 @@
         na++
     }
     //SAÍDA
+    }
 
+    /*
+    professor, fiquei pensando na resolução desse exercicio no onibus e acabei chegando no resultado, porem como isto está sendo mandado algumas horas após o envio da atividade
+    senti necessidade de esclarecer, não sei se vai contar por ter sido enviado após o prazo
+    */
+
+    
+    function versaoNova() {
+            const numero= Number(prompt("Insira um numero de 1 a 9"))
+    let i = 1;
+    let a = 0;
+    while (i <= numero) {
+        while (a < i) {
+            document.write(i);
+            a++;
+        }
+        document.write("<br>");
+        i++
+        a=0
+    }
+    i = numero - 1;
+    a = 0;
+    while (i >= 1) {
+        while (a < i) {
+            document.write(i);
+            a++;
+        }
+        document.write("<br>");
+        i--
+        a=0
+    }
+    }
+
+    const escolha = Number(prompt("Escolha a versão, 1-nova(corrigida) 2-antiga(errada), para melhor esclarecimento ler comentario no codigo"));
+    if (escolha === 1) { versaoNova(); } 
+    else if (escolha === 2) { versaoAntiga(); }
+    else { alert("Opção invalida");}
 </script>
